@@ -1,0 +1,179 @@
+/* Global styles */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    user-select: none;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Logo entrance styling */
+#logo-entrance {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Social media links */
+#social-media-links {
+    font-size: 16px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#social-media-links a {
+    display: inline-block;
+    margin: 10px;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+#social-media-links a:hover {
+    transform: scale(1);
+}
+
+/* General social media logo styles */
+.social-media-logo {
+    width: 55px;
+    height: 50px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* YouTube logo */
+#social-media-links a:nth-child(1) img {
+    width: 60px;
+    height: 55px;
+}
+
+/* SoundCloud logo */
+#social-media-links a:nth-child(2) img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Twitch logo */
+#social-media-links a:nth-child(3) img {
+    width: 53px;
+    height: 55px;
+}
+
+/* Instagram logo */
+#social-media-links a:nth-child(4) img {
+    width: 55px;
+    height: 52px;
+}
+
+/* TikTok logo */
+#social-media-links a:nth-child(5) img {
+    width: 65px;
+    height: 55px;
+}
+
+/* Shake animation on hover */
+.social-media-logo:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Shake animation keyframes */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+
+
+/* Enter button styling */
+#enter {
+    cursor: pointer;
+    transition: 0.3s ease-in;
+    font-size: 24px;
+    color: white !important;
+}
+
+/* Black background for click screen */
+.blurpage {
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.inside {
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    font-weight: bold;
+}
+
+.sparkle {
+    background-image: url(../../i.ibb.co/47v9bVs/U0hpDMb.png);
+}
+
+/* Eye Icon Container */
+#eyeIconContainer {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+/* Eye icon styling */
+#eyeIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+/* Visitor message styling */
+#visitorMessage {
+    font-family: monospace;
+    font-size: 16px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    #logo-entrance {
+        max-width: 90%;
+    }
+
+    #social-media-links {
+        font-size: 14px;
+    }
+
+    .social-media-logo {
+        width: 30px;
+        height: 30px;
+    }
+}

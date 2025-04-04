@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from clipzy.org/home/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Apr 2025 22:31:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xo Ery</title>
+    <link rel="stylesheet" href="clean.css">
+    <link rel="stylesheet" href="cursor.css">
+    <link rel="shortcut icon" href="img/Logo.png" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J326H43JYT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-J326H43JYT');
+    </script>
+</head>
+
+
+
+
+
+
+
+<body>
+    <!-- Social Media Logos -->
+    <img id="logo-entrance" src="img/eryloll.png" alt="Entrance Logo">
+    <div id="social-media-links">
+        <a href="https://youtube.com/xoeryy" target="_blank" rel="noopener noreferrer">
+            <img class="social-media-logo" src="img/Youtube.png" alt="YouTube">
+        <a href="https://twitch.tv/eryloved" target="_blank" rel="noopener noreferrer">
+            <img class="social-media-logo" src="img/Twitch.png" alt="Twitch">
+        </a>
+        <a href="https://www.instagram.com/xo_ery_" target="_blank" rel="noopener noreferrer">
+            <img class="social-media-logo" src="img/Instagram.png" alt="Instagram">
+        </a>
+        <a href="https://tiktok.com/@xo.ery" target="_blank" rel="noopener noreferrer">
+            <img class="social-media-logo" src="img/Tiktok.png" alt="TikTok">
+        </a>
+        <a href="https://soundcloud.com/xoery" target="_blank" rel="noopener noreferrer">
+             <img class="social-media-logo" src="img/sc.png" alt="GitHub">
+    </div>
+    <!-- Visitor Count with Eye Icon -->
+    <div id="eyeIconContainer">
+        <img id="eyeIcon" src="img/Eye.svg" alt="Eye Icon">
+        <span id="visitorMessage">0</span>
+    </div>
+
+    <!-- Click Sound -->
+    <audio id="clickSound" src="uploads/Click.wav"></audio>
+
+
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="uploads/ss.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+
+
+    <!-- Click Script -->
+    <script>
+        const clickSound = document.getElementById('clickSound');
+        clickSound.volume = 0.5;
+
+        document.addEventListener('click', () => {
+            if (!clickSound.muted) {
+                clickSound.currentTime = 0;
+                clickSound.play();
+            }
+        });
+
+        async function displayVisitorCount() {
+            try {
+                const response = await fetch("https://clipzy-j5pm.vercel.app/ga");
+                const data = await response.json();
+                const pageViews = data.totalPageViews;
+                document.getElementById('visitorMessage').innerText = pageViews;
+            } catch (error) {
+                console.error('Error fetching visit count:', error);
+                document.getElementById('visitorMessage').innerText = 'Unable to load';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', displayVisitorCount);
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/dance.js"></script>
+    <script src="js/sparkle.js"></script>
+    <script src="js/disable.js"></script>
+    <script src="js/loader.html"></script>
+    <script src="js/enter.js"></script>
+</body>
+
+</html>
